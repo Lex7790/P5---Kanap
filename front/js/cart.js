@@ -131,7 +131,7 @@ form.addEventListener('submit',function (event) {
    
     // empêche la soumission du formulaire
     event.preventDefault(); 
-    console.log ('bonjour')
+    
    
     // Permet de déclarer ma variable contact qui détiendra les données de l'utilisateur 
     let contact = {}
@@ -185,9 +185,7 @@ form.addEventListener('submit',function (event) {
         }
     });
     // Test de validation du formulaire 
-    console.log (Object.keys(contact).length)
-    console.log (products.length)
-    console.log('bonjour1')
+    
     if (Object.keys(contact).length === 5 && products.length > 0) {
         sendData (contact, productId)
         console.log ('bonjour2')
