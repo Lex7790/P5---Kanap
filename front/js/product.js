@@ -46,7 +46,7 @@ function insertdata(data) {
 let button = document.getElementById("addToCart")
 button.addEventListener ("click", () => {
     
-    if (document.getElementById('colors').value == "" && document.getElementById('quantity').value == 0){
+    if (document.getElementById('colors').value == "" && 100 > document.getElementById('quantity').value > 0){
         const para = document.createElement("p")
         para.innerHTML = "Veuillez choisir une couleur et une quantité";
         document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
@@ -54,7 +54,7 @@ button.addEventListener ("click", () => {
         const para = document.createElement("p")
         para.innerHTML = "Veuillez choisir une couleur";
         document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
-    } else if (document.getElementById('quantity').value == 0){
+    } else if (100 > document.getElementById('quantity').value > 0) {
         const para = document.createElement("p")
         para.innerHTML = "Veuillez choisir une quantité";
         document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
