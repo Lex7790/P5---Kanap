@@ -18,8 +18,6 @@ let fetchURL = 'http://localhost:3000/api/products/'+id;
 
 getapi(fetchURL);
 
-// Initialisation des variables 
-
 function insertdata(data) {
     let insertimg =
 

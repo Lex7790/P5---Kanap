@@ -28,6 +28,7 @@ async function fetchElement (array) {
 }
 
 function datatocart (data,element) {
+    empty= "''"
     let insertitem = 
     
     '<article class="cart__item" data-id="'+ element.productId +'" data-color="' + element.color + '">\n' +
@@ -43,7 +44,7 @@ function datatocart (data,element) {
     '<div class="cart__item__content__settings">\n' +
     '<div class="cart__item__content__settings__quantity">\n' +
     '<p>Qté : </p>\n' +
-    '<input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="' + element.quantity+'">\n' +
+    '<input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="' + element.quantity+'" oninput="validity.valid|| (value='+empty+');">\n' +
     '</div>\n' +
     '<div class="cart__item__content__settings__delete">\n' +
     ' <p class="deleteItem">Supprimer</p>\n' +
@@ -185,7 +186,9 @@ form.addEventListener('submit',function (event) {
         }
     });
     // Test de validation du formulaire 
-    
+    console.log (Object.keys(contact).length)
+    console.log (products.length)
+    console.log('bonjour1')
     if (Object.keys(contact).length === 5 && products.length > 0) {
         sendData (contact, productId)
         console.log ('bonjour2')

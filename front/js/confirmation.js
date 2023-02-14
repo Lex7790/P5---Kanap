@@ -5,7 +5,6 @@ const orderId = url.searchParams.get("orderId");
 
 document.addEventListener('DOMContentLoaded', function() {
     if (orderId !== null) {
-        console.log("Hi")
         document.getElementById('orderId').innerHTML = orderId;
         localStorage.clear();
     } else {
