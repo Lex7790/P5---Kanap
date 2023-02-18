@@ -59,7 +59,7 @@ function datatocart (data,element) {
 function addevent() {
             // Changement de la quantité 
     document.querySelectorAll('.itemQuantity').forEach (function (input) {
-        input.addEventListener ('change', function (){
+        input.addEventListener ('input', function (){
             // Recherche l'ID du produit
             let articleId = input.closest('.cart__item').dataset.id;
             console.log(articleId);

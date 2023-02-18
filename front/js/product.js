@@ -18,6 +18,7 @@ let fetchURL = 'http://localhost:3000/api/products/'+id;
 
 getapi(fetchURL);
 
+
 function insertdata(data) {
     let insertimg =
 
@@ -76,9 +77,16 @@ button.addEventListener ("click", () => {
                 productInlocalStorage.push (optionsProduct)
                 localStorage.setItem("product",JSON.stringify(productInlocalStorage))
             } else {
-                item.quantity += parseInt(document.getElementById('quantity').value);
+              let quantity_product = item.quantity
+              item.quantity += parseInt(document.getElementById('quantity').value);
+              if (item.quantity > 100) {
+              const para = document.createElement ("p")
+              para.innerHTML = "Vous avez déjà "+quantity_product+" produit de ce type dans votre panier.\n Il est impossible d'en ajouter"+parseInt(document.getElementById('quantity').value)+"car la quantité doit être inférieur à 100";
+              document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
+            } else {
                 localStorage.setItem("product",JSON.stringify(productInlocalStorage));
             }
+        }
         } else {
              // Si produit absent du localstorage
             productInlocalStorage = []
