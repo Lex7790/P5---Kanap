@@ -46,16 +46,13 @@ let button = document.getElementById("addToCart")
 button.addEventListener ("click", () => {
     
     if (document.getElementById('colors').value == "" &&  document.getElementById('quantity').value ==0){
-        const para = document.createElement("p")
-        para.innerHTML = "Veuillez choisir une couleur et une quantité";
+      
         document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
     } else if (document.getElementById('colors').value == ""){
-        const para = document.createElement("p")
-        para.innerHTML = "Veuillez choisir une couleur";
+        
         document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
     } else if (document.getElementById('quantity').value ==0) {
-        const para = document.createElement("p")
-        para.innerHTML = "Veuillez choisir une quantité";
+        
         document.getElementsByClassName ("item__content__addButton") [0].appendChild(para);
     } else {
         let productInlocalStorage = JSON.parse (localStorage.getItem ("product"))
